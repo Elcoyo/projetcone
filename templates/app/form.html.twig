@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{% block title %}Mon form{% endblock %}
+{% block body %}
+
+<h1 class="text-center my-4" > Mon formulaire</h1>
+{{ form_start(form) }}
+    
+    {{ form_row(form.prenom , {
+        label: "prenom",
+        attr: {placeholder: "prenom"}
+    }) }}
+    {{ form_row(form.nom) }}
+    {{ form_row(form.adresse) }}
+    {{ form_row(form.telephone) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.poste) }}
+    {{ form_row(form.salaire) }}
+    {{ form_row(form.datedenaissance) }}
+    
+{{form_end(form)}}
+{% endblock %}

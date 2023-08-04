@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Effectifs {% endblock %}
+
+{% block body %}
+<h1 >Mon effectif</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ID</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telephone</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Poste</th>
+      <th scope="col">Salaire</th>
+      <th scope="col">OPTION</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for employe in toto %} 
+
+    {# {{employe.}} #}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{employe.id}}</td>
+      <td>{{employe.prenom}}</td>
+      <td>{{employe.nom}}</td>
+      <td>{{employe.email}}</td>
+      <td>{{employe.telephone}}</td>
+      <td>{{employe.adresse}}</td>
+      <td>{{employe.poste}}</td>
+      <td>{{employe.salaire}}</td>
+      <td>
+        <a href="{{path('app_modifier', {id: employe.id})}}"  class="text-warning">Modifier</a>
+        <a href="{{path('app_supprimer',{id: employe.id})}}" class="text-danger">Supprimer</a>
+
+        
+      </td>
+    </tr>
+
+{% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}
